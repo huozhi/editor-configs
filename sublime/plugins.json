@@ -1,0 +1,12 @@
+{
+    "installed": [
+        "SublimeAStyleFormatter",
+        "ConvertToUTF8",
+        "Terminal",
+        "Markdown Extended"
+    ],
+
+    "used": [
+        "Markdown Preview"
+    ]
+}
