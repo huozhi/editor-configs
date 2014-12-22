@@ -133,8 +133,8 @@ set showcmd
 " Set 7 lines to the cursor - when moving vertically using j/k ,
 set so=7
 
-"set cursorline" 12
-"set cmdheight=2
+set cursorline" 12
+set cmdheight=2
 "set rulerformat=%20(%2*%<%f%=\ %m%r\ %3l\ %c\ %p%%%)
 "set statusline=%F%m%r%h%w\[POS=%l,%v][%p%%]\%{strftime(\"%d/%m/%y\ -\ %H:%M\")}
 set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
@@ -148,21 +148,20 @@ set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\
 "
 
 syntax enable
-set background=dark
-colorscheme solarized
 syntax on
-
+colorscheme monokai
+set background=dark
 
 
 " set t_Co=256
 
 " Set extra options when running in GUI mode
-if has("gui_running")
-    set guioptions-=T
-    set guioptions+=e
-    set t_Co=256
-    set guitablabel=%M\ %t
-endif
+" if has("gui_running")
+"     set guioptions-=T
+"     set guioptions+=e
+"     set t_Co=256
+"     set guitablabel=%M\ %t
+" endif
 "set guifont=Monaco:h20          "  &&
 "==========================================
 " file encode
