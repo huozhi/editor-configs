@@ -1,5 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/giles/code/node/test/express-pjax/node_modules'
-let g:netrw_dirhist_2='/home/giles/code/node/test/pjax/routes'
-let g:netrw_dirhist_3='/home/giles/code/django/notify/templates'
