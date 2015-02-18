@@ -61,6 +61,8 @@ filetype plugin on
 
 filetype plugin indent on
 
+set noai nosi
+set paste
 
 set nocompatible
 set autoread
