@@ -7,6 +7,7 @@
 
 " This line should not be removed as it ensures that various options are
 " properly set to work with the Vim-related packages available in Debian.
+
 runtime! debian.vim
 
 " Uncomment the next line to make Vim more Vi-compatible
@@ -33,7 +34,7 @@ endif
 " Uncomment the following to have Vim load indentation rules and plugins
 " according to the detected filetype.
 "if has("autocmd")
-"  filetype plugin indent on
+filetype plugin indent on
 "endif
 
 " The following are commented out as they cause vim to behave a lot
@@ -61,8 +62,6 @@ filetype plugin on
 
 filetype plugin indent on
 
-set noai nosi
-set paste
 
 set nocompatible
 set autoread
@@ -152,8 +151,14 @@ set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\
 syntax enable
 syntax on
 colorscheme monokai
-set background=dark
+" set background=dark
 
+" transparent bgcolor
+hi Normal ctermfg=252 ctermbg=none
+
+set noai nosi
+set paste
+set mouse=v
 
 " set t_Co=256
 
@@ -216,3 +221,53 @@ set magic
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
+
+set laststatus=2
+
+let g:go_disable_autoinstall=0
+
+
+map <F10> :call Run()<CR>
+func! Run()
+    exec "w"
+    if &filetype == 'c'
+        exec "! ./%<"
+    elseif &filetype == 'cpp'
+        exec "! ./%<"
+    elseif &filetype == 'py'
+        exec "!python %"
+    elseif &filetype == 'sh'
+        exec "! ./%"    
+    endif
+endfunc
+
+
+map <S-F9> :call Compile()<CR>
+func! Compile()
+    exec "w"
+    if &filetype == 'c'
+        exec "!gcc % -o %<"
+    elseif &filetype == 'cpp'
+        exec "!g++ -std=c++11 % -o %<"
+    elseif &filetype == 'py'
+        exec "!python %"
+    elseif &filetype == 'sh'
+        exec "!chmod a+x %"
+    endif 
+endfunc 
+
+map <F9> :call CompileRun()<CR>
+func! CompileRun()
+    exec "w"
+    if &filetype == 'c'
+        exec "!gcc % -o %< && ./%<"
+    elseif &filetype == 'cpp'
+        exec "!g++ -std=c++11 % -o %< && ./%<"
+    elseif &filetype == 'py'
+        exec "!python %"
+    elseif &filetype == 'sh'
+        exec "!chmod a+x % && ./%"
+    endif
+endfunc
+ 
+ 
