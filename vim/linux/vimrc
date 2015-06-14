@@ -118,8 +118,7 @@ set foldenable
 set tabstop=4                " Tab        []
 set shiftwidth=4
 set expandtab                " Tab    [Tab Ctrl+V + Tab]
-"  set softtabstop=4
-
+set autoindent
 set ai "Auto indent
 set si "Smart indent
 
