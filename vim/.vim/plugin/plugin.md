@@ -1,2 +1,0 @@
-plugin.md
-taglist.vim
